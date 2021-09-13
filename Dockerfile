@@ -1,4 +1,4 @@
 FROM openjdk:8
-ADD target/users-mysql.jar users-mysql.jar
+ADD target/catnames-api.jar catnames-api.jar
 EXPOSE 8086
-ENTRYPOINT ["java", "-jar", "users-mysql.jar"]
+ENTRYPOINT ["java", "-jar", "catnames-api.jar"]
