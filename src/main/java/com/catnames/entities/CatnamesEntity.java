@@ -8,7 +8,10 @@ import javax.persistence.*;
 public class CatnamesEntity {
 
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name="ID", unique = true)
     private Integer id;
+
     private String name;
 
     public CatnamesEntity() {

@@ -28,7 +28,7 @@ public class CatnamesService {
 
     public List<CatnamesEntity> post(String name) {
             CatnamesEntity catname = new CatnamesEntity();
-            catname.setId((int)IDCounter.incrementAndGet());
+//            catname.setId((int)IDCounter.incrementAndGet());
             catname.setName(name);
             this.repository.save(catname);
             return repository.findAll();
