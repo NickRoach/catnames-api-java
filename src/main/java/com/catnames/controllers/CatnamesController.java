@@ -12,6 +12,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("")
+@CrossOrigin(origins = "https://nickroach.github.io/", maxAge = 3600)
 public class CatnamesController {
 
     @Autowired
@@ -22,19 +23,16 @@ public class CatnamesController {
     }
 
     //to get the whole list
-    @CrossOrigin(origins = "https://nickroach.github.io/")
     @GetMapping
     public List<CatnamesEntity> all() {
         return this.service.all();
     }
 
-    @CrossOrigin(origins = "https://nickroach.github.io/")
     @DeleteMapping
     public List<CatnamesEntity> delete(@Valid @RequestBody CatCreatePayload payload) throws JsonProcessingException {
         return this.service.delete(payload);
     }
 
-    @CrossOrigin(origins = "https://nickroach.github.io/")
     @PostMapping
     public List<CatnamesEntity> create(@Valid @RequestBody CatCreatePayload payload) throws JsonProcessingException {
         return this.service.create(payload);
