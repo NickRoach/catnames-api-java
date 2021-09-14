@@ -45,4 +45,9 @@ public class CatnamesService {
         this.repository.save(newCat);
         return repository.findAll();
     }
+
+    public List<CatnamesEntity> delete(@Valid CatCreatePayload data) {
+        this.repository.deleteById(data.getId());
+        return repository.findAll();
+    }
 }

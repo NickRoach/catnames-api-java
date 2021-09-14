@@ -10,6 +10,9 @@ public class CatCreatePayload{
     @Getter @Setter
     private String occupation;
 
+    @Getter
+    private Integer id;
+
     public CatCreatePayload() {};
 
     public CatCreatePayload(

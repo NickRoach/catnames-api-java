@@ -33,6 +33,11 @@ public class CatnamesController {
         return this.service.deleteById(id);
     }
 
+    @DeleteMapping
+    public List<CatnamesEntity> delete(@Valid @RequestBody CatCreatePayload payload) throws JsonProcessingException {
+        return this.service.delete(payload);
+    }
+
     @PostMapping
     public List<CatnamesEntity> create(@Valid @RequestBody CatCreatePayload payload) throws JsonProcessingException {
         return this.service.create(payload);
