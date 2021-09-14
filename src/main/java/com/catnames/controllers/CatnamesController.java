@@ -11,7 +11,6 @@ import javax.validation.Valid;
 import java.util.List;
 
 @RestController
-@CrossOrigin
 @RequestMapping("")
 public class CatnamesController {
 
@@ -23,21 +22,19 @@ public class CatnamesController {
     }
 
     //to get the whole list
+    @CrossOrigin(origins = "https://nickroach.github.io/")
     @GetMapping
     public List<CatnamesEntity> all() {
         return this.service.all();
     }
 
-    @DeleteMapping(value = "/{id}")
-    public List<CatnamesEntity> delete(@PathVariable Integer id){
-        return this.service.deleteById(id);
-    }
-
+    @CrossOrigin(origins = "https://nickroach.github.io/")
     @DeleteMapping
     public List<CatnamesEntity> delete(@Valid @RequestBody CatCreatePayload payload) throws JsonProcessingException {
         return this.service.delete(payload);
     }
 
+    @CrossOrigin(origins = "https://nickroach.github.io/")
     @PostMapping
     public List<CatnamesEntity> create(@Valid @RequestBody CatCreatePayload payload) throws JsonProcessingException {
         return this.service.create(payload);
