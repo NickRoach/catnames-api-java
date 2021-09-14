@@ -1,10 +1,13 @@
 package com.catnames.controllers;
 
 import com.catnames.entities.CatnamesEntity;
+import com.catnames.payloads.requests.CatCreatePayload;
 import com.catnames.services.CatnamesService;
+import com.fasterxml.jackson.core.JsonProcessingException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import javax.validation.Valid;
 import java.util.List;
 
 @RestController
@@ -19,7 +22,6 @@ public class CatnamesController {
         this.service = service;
     }
 
-
     //to get the whole list
     @GetMapping
     public List<CatnamesEntity> all() {
@@ -31,8 +33,8 @@ public class CatnamesController {
         return this.service.deleteById(id);
     }
 
-    @PostMapping(value = "/{name}")
-    public List<CatnamesEntity> post(@PathVariable String name){
-        return this.service.post(name);
+    @PostMapping
+    public List<CatnamesEntity> create(@Valid @RequestBody CatCreatePayload payload) throws JsonProcessingException {
+        return this.service.create(payload);
     }
 }
