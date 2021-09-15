@@ -25,10 +25,10 @@ public class CatnamesService {
     }
 
     public List<CatnamesEntity> post(String name) {
-            CatnamesEntity catname = new CatnamesEntity();
-            catname.setName(name);
-            this.repository.save(catname);
-            return repository.findAll();
+        CatnamesEntity catname = new CatnamesEntity();
+        catname.setName(name);
+        this.repository.save(catname);
+        return repository.findAll();
     }
 
     public List<CatnamesEntity> create(@Valid CatCreatePayload data) {

@@ -21,7 +21,6 @@ public class CatnamesController {
         this.service = service;
     }
 
-    //to get the whole list
     @GetMapping
     public List<CatnamesEntity> all() {
         return this.service.all();
