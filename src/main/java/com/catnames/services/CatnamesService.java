@@ -19,18 +19,6 @@ public class CatnamesService {
         return this.repository.findAll();
     }
 
-    public List<CatnamesEntity> deleteById(Integer id){
-        this.repository.deleteById(id);
-        return repository.findAll();
-    }
-
-    public List<CatnamesEntity> post(String name) {
-        CatnamesEntity catname = new CatnamesEntity();
-        catname.setName(name);
-        this.repository.save(catname);
-        return repository.findAll();
-    }
-
     public List<CatnamesEntity> create(@Valid CatCreatePayload data) {
         CatnamesEntity newCat = new CatnamesEntity();
         newCat.setName(data.getName());
