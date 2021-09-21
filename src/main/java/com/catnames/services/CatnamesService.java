@@ -27,8 +27,8 @@ public class CatnamesService {
         return repository.findAll();
     }
 
-    public List<CatnamesEntity> delete(@Valid CatCreatePayload data) {
-        this.repository.deleteById(data.getId());
+    public List<CatnamesEntity> delete(int id) {
+        this.repository.deleteById(id);
         return repository.findAll();
     }
 }

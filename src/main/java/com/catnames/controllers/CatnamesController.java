@@ -10,7 +10,7 @@ import javax.validation.Valid;
 import java.util.List;
 
 @RestController
-@RequestMapping("")
+@RequestMapping
 @CrossOrigin(origins = "https://nickroach.github.io/", maxAge = 3600)
 public class CatnamesController {
 
@@ -26,9 +26,9 @@ public class CatnamesController {
         return this.service.all();
     }
 
-    @DeleteMapping
-    public List<CatnamesEntity> delete(@Valid @RequestBody CatCreatePayload payload) throws JsonProcessingException {
-        return this.service.delete(payload);
+    @DeleteMapping(value = "/{id}")
+    public List<CatnamesEntity> delete(@PathVariable int id) {
+        return this.service.delete(id);
     }
 
     @PostMapping
