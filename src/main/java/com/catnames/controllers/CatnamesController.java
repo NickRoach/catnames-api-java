@@ -26,7 +26,7 @@ public class CatnamesController {
         return this.service.all();
     }
 
-    @DeleteMapping (value = "/{id}")
+    @DeleteMapping(value = "/{id}")
     public List<CatnamesEntity> delete(@PathVariable int id) {
         return this.service.delete(id);
     }
